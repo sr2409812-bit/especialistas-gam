@@ -1,0 +1,303 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Red Especialistas GAM — Cotización y Diagnóstico en Minutos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- TOP HEADER -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="brand-logo"><i class="fa-solid fa-shield-halved"></i></div>
+        <div>
+          <span class="brand-name">Red Especialistas GAM</span>
+          <span class="brand-tag">Verificados en Costa Rica</span>
+        </div>
+      </div>
+      <div class="header-status">
+        <span class="pulse-dot"></span>
+        <span class="status-text">Atención activa hoy en el GAM</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="main-container">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="heroSection">
+      <div class="trust-pill">
+        <i class="fa-solid fa-certificate"></i> Red Oficial de Profesionales Verificados
+      </div>
+      <h1 class="hero-title" id="dynamicTitle">
+        Encuentra y cotiza con los mejores <span class="gradient-text">especialistas certificados</span> en tu zona
+      </h1>
+      <p class="hero-subtitle" id="dynamicSubtitle">
+        Sin intermediarios costosos ni llamadas innecesarias. Recibe respuestas y presupuestos directos a tu WhatsApp en menos de 15 minutos.
+      </p>
+
+      <div class="trust-stats">
+        <div class="stat-item">
+          <strong>+4,800</strong>
+          <span>Cotizaciones atendidas</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <strong>100%</strong>
+          <span>Profesionales con respaldo</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <strong>&lt; 15 min</strong>
+          <span>Tiempo prom. de respuesta</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FUNNEL CARD -->
+    <div class="funnel-card">
+
+      <!-- PROGRESS BAR -->
+      <div class="progress-bar-container">
+        <div class="progress-step active" id="stepIndicator1">
+          <div class="step-num">1</div>
+          <span class="step-label">Servicio</span>
+        </div>
+        <div class="progress-line" id="line1"></div>
+        <div class="progress-step" id="stepIndicator2">
+          <div class="step-num">2</div>
+          <span class="step-label">Detalles</span>
+        </div>
+        <div class="progress-line" id="line2"></div>
+        <div class="progress-step" id="stepIndicator3">
+          <div class="step-num">3</div>
+          <span class="step-label">Ubicación</span>
+        </div>
+        <div class="progress-line" id="line3"></div>
+        <div class="progress-step" id="stepIndicator4">
+          <div class="step-num">4</div>
+          <span class="step-label">Contacto</span>
+        </div>
+      </div>
+
+      <!-- STEP 1: SELECT VERTICAL (If not specified by URL) -->
+      <div class="funnel-step-view active" id="step1View">
+        <h2 class="step-title">¿Qué tipo de especialista necesitas hoy?</h2>
+        <p class="step-desc">Selecciona la categoría para conectarte con profesionales verificados en tu zona:</p>
+
+        <div class="category-grid">
+          <!-- Dental -->
+          <div class="category-card" onclick="selectVertical('dental')">
+            <div class="cat-icon dental"><i class="fa-solid fa-tooth"></i></div>
+            <div class="cat-info">
+              <h3>Odontología Especializada</h3>
+              <p>Implantes, Ortodoncia Invisible, Diseño de Sonrisa y Cirugías</p>
+            </div>
+            <i class="fa-solid fa-chevron-right cat-arrow"></i>
+          </div>
+
+          <!-- Mecanica -->
+          <div class="category-card" onclick="selectVertical('mecanica')">
+            <div class="cat-icon auto"><i class="fa-solid fa-gears"></i></div>
+            <div class="cat-info">
+              <h3>Cajas Automáticas & Diagnóstico</h3>
+              <p>Transmisiones, Escaneo Computarizado, Frenos y Motor</p>
+            </div>
+            <i class="fa-solid fa-chevron-right cat-arrow"></i>
+          </div>
+
+          <!-- Veterinaria -->
+          <div class="category-card" onclick="selectVertical('veterinaria')">
+            <div class="cat-icon vet"><i class="fa-solid fa-paw"></i></div>
+            <div class="cat-info">
+              <h3>Veterinarias & Urgencias 24H</h3>
+              <p>Hospitalización, Cirugías, Traumatología y Cuidados Críticos</p>
+            </div>
+            <i class="fa-solid fa-chevron-right cat-arrow"></i>
+          </div>
+
+          <!-- Mudanzas -->
+          <div class="category-card" onclick="selectVertical('mudanzas')">
+            <div class="cat-icon truck"><i class="fa-solid fa-truck-moving"></i></div>
+            <div class="cat-info">
+              <h3>Mudanzas & Transporte Seguro</h3>
+              <p>Casas, Condominios, Oficinas y Guardamuebles en el GAM</p>
+            </div>
+            <i class="fa-solid fa-chevron-right cat-arrow"></i>
+          </div>
+
+          <!-- Hogar Urgente -->
+          <div class="category-card" onclick="selectVertical('hogar')">
+            <div class="cat-icon home"><i class="fa-solid fa-wrench"></i></div>
+            <div class="cat-info">
+              <h3>Plomería & Fontanería Industrial</h3>
+              <p>Destape de Cañerías con Sonda, Fugas de Agua e Impermeabilización</p>
+            </div>
+            <i class="fa-solid fa-chevron-right cat-arrow"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2: SPECIFIC NEED (Dynamic based on selected vertical) -->
+      <div class="funnel-step-view" id="step2View">
+        <div class="back-link" onclick="goToStep(1)">
+          <i class="fa-solid fa-arrow-left"></i> Cambiar categoría
+        </div>
+        <h2 class="step-title" id="step2Title">¿Qué procedimiento específico requieres?</h2>
+        <p class="step-desc" id="step2Desc">Elige la opción que mejor describa tu caso:</p>
+
+        <div class="options-grid" id="step2Options">
+          <!-- Populated by JS dynamically -->
+        </div>
+
+        <div class="custom-note-group">
+          <label>Detalle adicional de tu necesidad (opcional):</label>
+          <input type="text" id="customNoteInput" placeholder="Ej: Me urge para un viaje este viernes / El carro da un tirón en segunda marcha..." />
+        </div>
+
+        <button class="btn-primary" id="btnStep2Next" onclick="goToStep(3)" disabled>
+          Continuar <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+      <!-- STEP 3: LOCATION & URGENCY -->
+      <div class="funnel-step-view" id="step3View">
+        <div class="back-link" onclick="goToStep(2)">
+          <i class="fa-solid fa-arrow-left"></i> Volver a detalles
+        </div>
+        <h2 class="step-title">¿Dónde te encuentras y con cuánta urgencia lo requieres?</h2>
+        <p class="step-desc">Para canalizarte con el especialista disponible más cercano en tu sector:</p>
+
+        <div class="form-section">
+          <label class="form-label"><i class="fa-solid fa-location-dot"></i> Zona de preferencia en el GAM:</label>
+          <div class="zone-chips" id="zoneChips">
+            <div class="chip" onclick="selectZone(this, 'Escazú / San Rafael')">Escazú</div>
+            <div class="chip" onclick="selectZone(this, 'Santa Ana / Lindora')">Santa Ana</div>
+            <div class="chip" onclick="selectZone(this, 'Curridabat / Pinares')">Curridabat / Pinares</div>
+            <div class="chip" onclick="selectZone(this, 'La Sabana / Rohrmoser')">Sabana / Rohrmoser</div>
+            <div class="chip" onclick="selectZone(this, 'San José Centro')">San José Centro</div>
+            <div class="chip" onclick="selectZone(this, 'Heredia')">Heredia</div>
+            <div class="chip" onclick="selectZone(this, 'Alajuela')">Alajuela</div>
+            <div class="chip" onclick="selectZone(this, 'Cartago / Tres Ríos')">Cartago / Tres Ríos</div>
+          </div>
+        </div>
+
+        <div class="form-section" style="margin-top:20px">
+          <label class="form-label"><i class="fa-regular fa-clock"></i> ¿Para cuándo necesitas el servicio / cita?:</label>
+          <div class="urgency-chips" id="urgencyChips">
+            <div class="chip urgent" onclick="selectUrgency(this, 'Urgente hoy mismo')">🚨 Urgente hoy mismo</div>
+            <div class="chip" onclick="selectUrgency(this, 'Próximas 24 a 48 horas')">⚡ Próximas 24 - 48h</div>
+            <div class="chip" onclick="selectUrgency(this, 'Esta misma semana')">📅 Esta misma semana</div>
+            <div class="chip" onclick="selectUrgency(this, 'Solo cotizando para planificar')">🔍 Solo cotizando</div>
+          </div>
+        </div>
+
+        <button class="btn-primary" id="btnStep3Next" onclick="goToStep(4)" disabled style="margin-top:24px">
+          Continuar a Datos de Contacto <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+      <!-- STEP 4: CONTACT (WHATSAPP VERIFICATION) -->
+      <div class="funnel-step-view" id="step4View">
+        <div class="back-link" onclick="goToStep(3)">
+          <i class="fa-solid fa-arrow-left"></i> Volver a ubicación
+        </div>
+        <h2 class="step-title">¿A dónde te enviamos las cotizaciones directas?</h2>
+        <p class="step-desc">El especialista verificará disponibilidad y te contactará con el presupuesto exacto sin costo:</p>
+
+        <div class="contact-form">
+          <div class="input-group">
+            <label><i class="fa-solid fa-user"></i> Tu Nombre Completo:</label>
+            <input type="text" id="leadName" placeholder="Ej: Carlos Murillo" required />
+          </div>
+
+          <div class="input-group">
+            <label><i class="fa-brands fa-whatsapp"></i> Número de WhatsApp (Costa Rica):</label>
+            <div class="phone-input-wrapper">
+              <span class="phone-prefix">+506</span>
+              <input type="tel" id="leadPhone" placeholder="8888 8888" maxlength="9" oninput="formatPhoneCR(this)" required />
+            </div>
+            <span class="input-hint">Recibirás los presupuestos y disponibilidad por WhatsApp oficial.</span>
+          </div>
+
+          <div class="guarantee-box">
+            <i class="fa-solid fa-lock"></i>
+            <div>
+              <strong>100% Confidencial y Sin Compromiso</strong>
+              <p>Tus datos solo se comparten con el especialista seleccionado de tu zona. Cero spam.</p>
+            </div>
+          </div>
+
+          <button class="btn-primary btn-submit" id="btnSubmitLead" onclick="submitLead()">
+            <i class="fa-brands fa-whatsapp"></i> Recibir Cotizaciones por WhatsApp
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 5: SUCCESS / CONFIRMATION SCREEN -->
+      <div class="funnel-step-view" id="stepSuccessView">
+        <div class="success-icon"><i class="fa-solid fa-check"></i></div>
+        <h2 class="step-title" style="color:#10b981">¡Solicitud Procesada con Éxito!</h2>
+        <p class="step-desc">
+          Hemos recibido tus requerimientos. Un especialista verificado de la zona seleccionada se comunicará a tu WhatsApp en los próximos minutos.
+        </p>
+
+        <div class="summary-card" id="leadSummaryCard">
+          <!-- Populated by JS -->
+        </div>
+
+        <div class="b2b-action-panel">
+          <div class="b2b-header">
+            <span class="badge-b2b">VISTA DE ASIGNACIÓN (MEDIAOPS CORE)</span>
+            <p>Ficha generada para entrega directa a la clínica o taller:</p>
+          </div>
+          <div class="b2b-drop-preview" id="b2bDropPreview"></div>
+          <div class="b2b-buttons">
+            <button class="btn-copy" onclick="copyLeadDrop()"><i class="fa-solid fa-copy"></i> Copiar Mensaje de Lead Drop</button>
+            <button class="btn-secondary" onclick="resetFunnel()"><i class="fa-solid fa-rotate-right"></i> Nueva Cotización</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- VALUE PROPS / TRUST BADGES -->
+    <section class="value-props">
+      <div class="prop-card">
+        <div class="prop-icon"><i class="fa-solid fa-user-doctor"></i></div>
+        <h3>Profesionales Colegiados</h3>
+        <p>Especialistas debidamente acreditados en sus respectivos colegios profesionales de Costa Rica.</p>
+      </div>
+      <div class="prop-card">
+        <div class="prop-icon"><i class="fa-solid fa-bolt"></i></div>
+        <h3>Respuesta en Minutos</h3>
+        <p>Sin esperas telefónicas. Conexión directa a través de WhatsApp empresarial con atención en el GAM.</p>
+      </div>
+      <div class="prop-card">
+        <div class="prop-icon"><i class="fa-solid fa-handshake"></i></div>
+        <h3>Garantía y Transparencia</h3>
+        <p>Presupuestos desglosados y claros. Pagas directamente al profesional solo cuando recibes el servicio.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p>© 2026 Red Especialistas GAM. Plataforma de Conexión y Cotizaciones en el Gran Área Metropolitana, Costa Rica.</p>
+      <p class="footer-note">San José • Escazú • Santa Ana • Curridabat • Sabana • Heredia • Alajuela • Cartago</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
