@@ -1,6 +1,6 @@
 ﻿// ==========================================================================
-// RED ESPECIALISTAS GAM — PERFORMANCE ENGINE (APP.JS)
-// Multi-Vertical Lead Capture, Qualification & Dispatch Architecture
+// RED ESPECIALISTAS GAM — PERFORMANCE ENGINE (APP.JS) v2.0
+// Multi-Vertical Lead Capture, Qualification & Real-Time Alert Dispatcher
 // ==========================================================================
 
 const VERTICALS_CATALOG = {
@@ -296,6 +296,13 @@ function renderSuccessScreen(lead) {
 👉 Prospecto entregado para atención y cotización inmediata.`;
 
   document.getElementById("b2bDropPreview").innerText = b2bText;
+
+  // Add direct WhatsApp Action Button for client
+  const encodedMsg = encodeURIComponent(`Hola, acabo de solicitar una cotización en Red Especialistas GAM para ${lead.service} en ${lead.zone}. Mi nombre es ${lead.name}.`);
+  const directWaBtn = document.getElementById("btnDirectWa");
+  if (directWaBtn) {
+    directWaBtn.href = `https://wa.me/50672052720?text=${encodedMsg}`;
+  }
 }
 
 function copyLeadDrop() {
