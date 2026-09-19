@@ -1,4 +1,4 @@
-﻿// ==========================================================================
+// ==========================================================================
 // RED ESPECIALISTAS GAM — PERFORMANCE ENGINE (APP.JS) v2.0
 // Multi-Vertical Lead Capture, Qualification & Real-Time Alert Dispatcher
 // ==========================================================================
@@ -251,6 +251,9 @@ function submitLead() {
   savedLeads.unshift(leadData);
   localStorage.setItem("gam_leads", JSON.stringify(savedLeads));
 
+  // Dispatch real-time alert to Sebas via Telegram Bot
+  dispatchTelegramAlert(leadData);
+
   // Render Confirmation Screen
   renderSuccessScreen(leadData);
 
@@ -258,6 +261,34 @@ function submitLead() {
   document.querySelectorAll(".funnel-step-view").forEach(v => v.classList.remove("active"));
   document.getElementById("stepSuccessView").classList.add("active");
   document.querySelector(".funnel-card").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function dispatchTelegramAlert(lead) {
+  const cleanPhone = lead.phone.replace(/[^0-9]/g, "");
+  const alertMsg = `🚨 NUEVO PROSPECTO CALIFICADO (Red Especialistas GAM)
+----------------------------------------
+👤 Nombre: ${lead.name}
+📱 WhatsApp: ${lead.phone}
+🛠 Requerimiento: ${lead.service}
+📂 Categoría: ${lead.vertical}
+📍 Zona: ${lead.zone}
+⏰ Urgencia: ${lead.urgency}
+📝 Detalle: ${lead.note}
+🆔 Código: ${lead.id}
+----------------------------------------
+👉 Toca para abrir WhatsApp con el cliente:
+https://wa.me/${cleanPhone}`;
+
+  fetch("https://api.telegram.org/bot8643706818:AAGWTxHDPDutIPgXpCLqAjpOV9YNmFRCqT4/sendMessage", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      chat_id: "8640841109",
+      text: alertMsg
+    })
+  }).catch(err => {
+    console.warn("Telegram dispatch silently handled:", err);
+  });
 }
 
 function renderSuccessScreen(lead) {
